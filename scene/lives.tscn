@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c5vcxr7l30afh"]
+
+[ext_resource type="Script" uid="uid://di86gf201telu" path="res://script/lives.gd" id="1_xj1q3"]
+[ext_resource type="Texture2D" uid="uid://dv1m1jbat5c1s" path="res://assets/heart.png" id="2_r11ep"]
+
+[node name="lives" type="Node2D" unique_id=1722430613]
+script = ExtResource("1_xj1q3")
+
+[node name="live" type="Sprite2D" parent="." unique_id=485403533]
+position = Vector2(25, 26)
+scale = Vector2(0.052734375, 0.052734375)
+texture = ExtResource("2_r11ep")
+
+[node name="live2" type="Sprite2D" parent="." unique_id=200944185]
+position = Vector2(60, 26)
+scale = Vector2(0.052734375, 0.052734375)
+texture = ExtResource("2_r11ep")
+
+[node name="live3" type="Sprite2D" parent="." unique_id=981805104]
+position = Vector2(93, 27)
+scale = Vector2(0.052734375, 0.052734375)
+texture = ExtResource("2_r11ep")

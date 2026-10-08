@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bl7gh71ne0y5j"]
+
+[ext_resource type="Script" uid="uid://dakjs250c56dr" path="res://script/main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c7223yyo0m7lb" path="res://scene/cannon.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://822fm6wbiowc" path="res://scene/invader_spawner.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bvsxjvcidueuo" path="res://scene/laser_catcher.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c5vcxr7l30afh" path="res://scene/lives.tscn" id="5_lquwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wex63"]
+size = Vector2(30, 631.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4wtx"]
+size = Vector2(1101, 68.50001)
+
+[node name="Main" type="Node2D" unique_id=844605241]
+script = ExtResource("1_1bvp3")
+
+[node name="Cannon" parent="." unique_id=190567856 instance=ExtResource("1_ig7tw")]
+
+[node name="LaserCatcher" parent="." unique_id=1159240536 instance=ExtResource("3_h2yge")]
+
+[node name="InvaderSpawner" parent="." unique_id=1612590029 instance=ExtResource("3_1bvp3")]
+position = Vector2(179, 172)
+
+[node name="LeftWall" type="Area2D" parent="." unique_id=1752992310]
+position = Vector2(15, 240)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=293941538]
+position = Vector2(-8, 86)
+shape = SubResource("RectangleShape2D_wex63")
+
+[node name="RightWall" type="Area2D" parent="." unique_id=1059425456]
+position = Vector2(1124, 266)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=1816354278]
+position = Vector2(-364, 56)
+shape = SubResource("RectangleShape2D_wex63")
+
+[node name="BottomWall" type="Area2D" parent="." unique_id=1892637165]
+position = Vector2(376, 625)
+rotation = 2.3561945
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall" unique_id=199211311]
+position = Vector2(-144.78012, -128.16309)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_m4wtx")
+
+[node name="lives" parent="." unique_id=1722430613 instance=ExtResource("5_lquwl")]
+position = Vector2(977, 71)
+
+[connection signal="area_entered" from="LeftWall" to="InvaderSpawner" method="_on_left_wall_area_entered"]
+[connection signal="area_entered" from="RightWall" to="InvaderSpawner" method="_on_right_wall_area_entered"]
+[connection signal="area_entered" from="BottomWall" to="InvaderSpawner" method="_on_bottom_wall_area_entered"]

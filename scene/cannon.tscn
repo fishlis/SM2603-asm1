@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c7223yyo0m7lb"]
+
+[ext_resource type="Script" uid="uid://wi62grv2pcqg" path="res://script/cannon.gd" id="1_emysx"]
+[ext_resource type="Texture2D" uid="uid://bch0e1yg64axi" path="res://assets/cannon.png" id="2_wjapt"]
+[ext_resource type="Script" uid="uid://d2e6u6vdum6ct" path="res://script/muzzle.gd" id="3_763vu"]
+[ext_resource type="PackedScene" uid="uid://dwwoqxmarvd5q" path="res://scene/laser.tscn" id="4_odvvv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wex63"]
+size = Vector2(70, 27)
+
+[node name="Cannon" type="Area2D" unique_id=190567856]
+position = Vector2(626, 611)
+collision_layer = 8
+script = ExtResource("1_emysx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=241653622]
+position = Vector2(2, 2.1392212)
+scale = Vector2(2.1875, 1.6337025)
+texture = ExtResource("2_wjapt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2081541621]
+position = Vector2(2, 15.778442)
+shape = SubResource("RectangleShape2D_wex63")
+
+[node name="Muzzle" type="Node2D" parent="." unique_id=1963770049]
+position = Vector2(5, 14.278442)
+script = ExtResource("3_763vu")
+laser_scene = ExtResource("4_odvvv")

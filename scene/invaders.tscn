@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bysufe3tntcva"]
+
+[ext_resource type="Script" uid="uid://defhfy87dwjng" path="res://script/invaders.gd" id="1_3aifh"]
+[ext_resource type="Texture2D" uid="uid://csjjwmpgrunjr" path="res://assets/invader1-1.png" id="1_4wq66"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wex63"]
+radius = 5.0
+
+[node name="invaders" type="Area2D" unique_id=1476676899]
+position = Vector2(529, 98)
+scale = Vector2(4, 4)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_3aifh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1349502581]
+texture = ExtResource("1_4wq66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1766168287]
+shape = SubResource("CircleShape2D_wex63")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

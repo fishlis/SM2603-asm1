@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bvsxjvcidueuo"]
+
+[ext_resource type="Script" uid="uid://ci5l3cvlwav14" path="res://script/laser_catcher.gd" id="1_xo3bi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wex63"]
+size = Vector2(1135, 58.5)
+
+[node name="LaserCatcher" type="Area2D" unique_id=1159240536]
+position = Vector2(566, 33)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_xo3bi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1105296441]
+position = Vector2(6, -2)
+shape = SubResource("RectangleShape2D_wex63")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
