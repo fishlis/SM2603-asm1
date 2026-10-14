@@ -5,11 +5,13 @@ extends Node2D
 @export var horizontal = 48
 @export var vertical = 48
 @export var rows = 3
-@export var columns = 5
-@export var vertical_speed = 10
+@export var columns = 15
+@export var vertical_speed = 48 
 @export var horizontal_speed = 10
 
 var direction = 1
+var spawnedRows = 1
+
 
 
 func _ready() -> void:
@@ -24,18 +26,25 @@ func spawn_invaders():
 			invader.position = Vector2(c * horizontal, r * vertical)
 			add_child(invader)
 
+func spawn_new_row():
+	for c in columns: 	
+		var invader = invader_scene.instantiate()
+		invader.position = Vector2(c * horizontal, 0 - spawnedRows * vertical)
+		add_child(invader)
+	print("new row spawned")
+	spawnedRows+=1
 
 func _on_left_wall_area_entered(area: Area2D) -> void:
 	if direction < 0:
 		direction *= -1
 		position.y += vertical_speed
-
+		spawn_new_row()
 
 func _on_right_wall_area_entered(area: Area2D) -> void:
 	if direction > 0:
 		direction *= -1
 		position.y += vertical_speed
-
+		spawn_new_row()
 
 func _on_movement_timer_timeout() -> void:
 	position.x += horizontal_speed * direction

@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	print("Catch!")
-	get_tree().reload_current_scene()
+	area.queue_free()

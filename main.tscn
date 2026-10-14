@@ -18,9 +18,10 @@ script = ExtResource("1_1bvp3")
 [node name="Cannon" parent="." unique_id=190567856 instance=ExtResource("1_ig7tw")]
 
 [node name="LaserCatcher" parent="." unique_id=1159240536 instance=ExtResource("3_h2yge")]
+position = Vector2(565, 33)
 
 [node name="InvaderSpawner" parent="." unique_id=1612590029 instance=ExtResource("3_1bvp3")]
-position = Vector2(179, 172)
+position = Vector2(179, 75)
 
 [node name="LeftWall" type="Area2D" parent="." unique_id=1752992310]
 position = Vector2(15, 240)
@@ -35,7 +36,7 @@ position = Vector2(1124, 266)
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=1816354278]
-position = Vector2(-364, 56)
+position = Vector2(0, 54)
 shape = SubResource("RectangleShape2D_wex63")
 
 [node name="BottomWall" type="Area2D" parent="." unique_id=1892637165]
