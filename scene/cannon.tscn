@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bch0e1yg64axi" path="res://assets/cannon.png" id="2_wjapt"]
 [ext_resource type="Script" uid="uid://d2e6u6vdum6ct" path="res://script/muzzle.gd" id="3_763vu"]
 [ext_resource type="PackedScene" uid="uid://dwwoqxmarvd5q" path="res://scene/laser.tscn" id="4_odvvv"]
+[ext_resource type="AudioStream" uid="uid://clf1p1gdb3paw" path="res://assets/Audio/laser.mp3" id="5_k5ked"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wex63"]
 size = Vector2(70, 27)
@@ -26,3 +27,7 @@ shape = SubResource("RectangleShape2D_wex63")
 position = Vector2(5, 14.278442)
 script = ExtResource("3_763vu")
 laser_scene = ExtResource("4_odvvv")
+
+[node name="sfx_shoot" type="AudioStreamPlayer2D" parent="." unique_id=1469756599]
+stream = ExtResource("5_k5ked")
+volume_db = -1.0

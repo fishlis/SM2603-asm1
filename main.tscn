@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://822fm6wbiowc" path="res://scene/invader_spawner.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bvsxjvcidueuo" path="res://scene/laser_catcher.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c5vcxr7l30afh" path="res://scene/lives.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bf67hnh3co1ed" path="res://scene/shield.tscn" id="6_7mycd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wex63"]
 size = Vector2(30, 631.5)
@@ -52,6 +53,20 @@ shape = SubResource("RectangleShape2D_m4wtx")
 
 [node name="lives" parent="." unique_id=1722430613 instance=ExtResource("5_lquwl")]
 position = Vector2(977, 71)
+
+[node name="Shield" parent="." unique_id=123603018 instance=ExtResource("6_7mycd")]
+position = Vector2(200, 495)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Shield" unique_id=1992773888]
+
+[node name="Shield2" parent="." unique_id=734653631 instance=ExtResource("6_7mycd")]
+position = Vector2(435, 496)
+
+[node name="Shield3" parent="." unique_id=619652872 instance=ExtResource("6_7mycd")]
+position = Vector2(660, 498)
+
+[node name="Shield4" parent="." unique_id=1669492559 instance=ExtResource("6_7mycd")]
+position = Vector2(885, 500)
 
 [connection signal="area_entered" from="LeftWall" to="InvaderSpawner" method="_on_left_wall_area_entered"]
 [connection signal="area_entered" from="RightWall" to="InvaderSpawner" method="_on_right_wall_area_entered"]

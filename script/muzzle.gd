@@ -1,7 +1,9 @@
 extends Node2D
 
 @export var laser_scene: PackedScene
+@onready var sfx_shoot: AudioStreamPlayer2D = $"../sfx_shoot"
 var can_shoot = true
+
 
 
 func _input(event):
@@ -11,7 +13,7 @@ func _input(event):
 		get_tree().root.get_node("Main").add_child(laser)
 		can_shoot = false
 		laser.tree_exited.connect(on_laser_destroyed)
-		
+		sfx_shoot.play()
 		
 func on_laser_destroyed():
 	can_shoot = true

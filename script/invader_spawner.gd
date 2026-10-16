@@ -38,13 +38,13 @@ func _on_left_wall_area_entered(area: Area2D) -> void:
 	if direction < 0:
 		direction *= -1
 		position.y += vertical_speed
-		spawn_new_row()
+		call_deferred("spawn_new_row")
 
 func _on_right_wall_area_entered(area: Area2D) -> void:
 	if direction > 0:
 		direction *= -1
 		position.y += vertical_speed
-		spawn_new_row()
+		call_deferred("spawn_new_row")
 
 func _on_movement_timer_timeout() -> void:
 	position.x += horizontal_speed * direction
