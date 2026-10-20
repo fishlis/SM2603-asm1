@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctxgb7bwvdsu"]
 
-[ext_resource type="Script" uid="uid://ckn27fxsc6bkf" path="res://weapon.gd" id="1_o2wld"]
+[ext_resource type="Script" uid="uid://ckn27fxsc6bkf" path="res://script/weapon.gd" id="1_o2wld"]
 [ext_resource type="Texture2D" uid="uid://b5j8rdcclt85j" path="res://assets/Weapon.png" id="1_swcir"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o2wld"]

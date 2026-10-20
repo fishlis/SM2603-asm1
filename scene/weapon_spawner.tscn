@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2p6k1kjjoh4n"]
 
-[ext_resource type="Script" uid="uid://iadak820xwgk" path="res://weapon_spawner.gd" id="1_8wb18"]
-[ext_resource type="PackedScene" uid="uid://ctxgb7bwvdsu" path="res://weapon.tscn" id="2_8wa6l"]
+[ext_resource type="Script" uid="uid://iadak820xwgk" path="res://script/weapon_spawner.gd" id="1_8wb18"]
+[ext_resource type="PackedScene" uid="uid://ctxgb7bwvdsu" path="res://scene/weapon.tscn" id="2_8wa6l"]
 [ext_resource type="PackedScene" uid="uid://0h503gd10l53" path="res://scene/shot.tscn" id="3_cyaue"]
 
 [node name="WeaponSpawner" type="Node2D" unique_id=1163157047]
