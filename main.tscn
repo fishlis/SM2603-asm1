@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bvsxjvcidueuo" path="res://scene/laser_catcher.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c5vcxr7l30afh" path="res://scene/lives.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bf67hnh3co1ed" path="res://scene/shield.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://b2p6k1kjjoh4n" path="res://weapon_spawner.tscn" id="7_272bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wex63"]
 size = Vector2(30, 631.5)
@@ -67,6 +68,8 @@ position = Vector2(660, 498)
 
 [node name="Shield4" parent="." unique_id=1669492559 instance=ExtResource("6_7mycd")]
 position = Vector2(885, 500)
+
+[node name="WeaponSpawner" parent="." unique_id=1163157047 instance=ExtResource("7_272bh")]
 
 [connection signal="area_entered" from="LeftWall" to="InvaderSpawner" method="_on_left_wall_area_entered"]
 [connection signal="area_entered" from="RightWall" to="InvaderSpawner" method="_on_right_wall_area_entered"]
