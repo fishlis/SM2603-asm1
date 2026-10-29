@@ -31,3 +31,9 @@ laser_scene = ExtResource("4_odvvv")
 [node name="sfx_shoot" type="AudioStreamPlayer2D" parent="." unique_id=1469756599]
 stream = ExtResource("5_k5ked")
 volume_db = -1.0
+
+[node name="Level_up_label" type="Label" parent="." unique_id=1519345917]
+offset_left = 33.0
+offset_top = -24.0
+offset_right = 73.0
+offset_bottom = -1.0

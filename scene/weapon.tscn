@@ -7,6 +7,8 @@
 radius = 35.22783
 
 [node name="Weapon" type="Area2D" unique_id=635341957]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_o2wld")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=260533304]
@@ -17,3 +19,5 @@ texture = ExtResource("1_swcir")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1417268633]
 position = Vector2(922, 244)
 shape = SubResource("CircleShape2D_o2wld")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

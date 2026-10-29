@@ -23,3 +23,9 @@ func _process(delta: float) -> void:
 		direction = Vector2.ZERO
 	position.x+= delta * speed * direction.x
 	position = position.clamp(Vector2.ZERO, screen_size)
+
+func show_message(text):
+	$Level_up_label.text = text
+	$Level_up_label.show()
+	await get_tree().create_timer(.5,0).timeout
+	$Level_up_label.hide() 
