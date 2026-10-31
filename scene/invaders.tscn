@@ -7,6 +7,7 @@
 radius = 5.0
 
 [node name="invaders" type="Area2D" unique_id=1476676899]
+texture_filter = 1
 position = Vector2(529, 98)
 scale = Vector2(4, 4)
 collision_layer = 4

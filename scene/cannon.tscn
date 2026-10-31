@@ -15,6 +15,7 @@ collision_layer = 8
 script = ExtResource("1_emysx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=241653622]
+texture_filter = 1
 position = Vector2(2, 2.1392212)
 scale = Vector2(2.1875, 1.6337025)
 texture = ExtResource("2_wjapt")
