@@ -2,6 +2,8 @@ class_name Boss
 extends Area2D
 var HP = 10
 @export var bossPoint = 500 # points player earns for killing boss
+@onready var sfx_explosion: AudioStreamPlayer2D = $"sfx_explosion"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -15,6 +17,7 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	print("hit")
 	HP -=1 
+	sfx_explosion.play()
 	if HP == 0: 
 		print("Boss is Defeated")
 		Global.score += bossPoint

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dg8m30ewlg0eq" path="res://script/invader_spawner.gd" id="1_6fcix"]
 [ext_resource type="PackedScene" uid="uid://bysufe3tntcva" path="res://scene/invaders.tscn" id="2_41qcn"]
 [ext_resource type="PackedScene" uid="uid://0h503gd10l53" path="res://scene/shot.tscn" id="3_shot"]
+[ext_resource type="AudioStream" uid="uid://csjv7mpufuwok" path="res://assets/Audio/explosion.mp3" id="4_e44ta"]
+[ext_resource type="AudioStream" uid="uid://ra5bqhj8l0fi" path="res://assets/Audio/stage_clear.mp3" id="5_cnd5r"]
 
 [node name="InvaderSpawner" type="Node2D" unique_id=1612590029]
 script = ExtResource("1_6fcix")
@@ -15,6 +17,12 @@ autostart = true
 
 [node name="Shot Timer" type="Timer" parent="." unique_id=1914404710]
 autostart = true
+
+[node name="sfx_explosion" type="AudioStreamPlayer2D" parent="." unique_id=1812781646]
+stream = ExtResource("4_e44ta")
+
+[node name="sfx_wave" type="AudioStreamPlayer2D" parent="." unique_id=518394086]
+stream = ExtResource("5_cnd5r")
 
 [connection signal="timeout" from="Movement Timer" to="." method="_on_movement_timer_timeout"]
 [connection signal="timeout" from="Shot Timer" to="." method="_on_shot_timer_timeout"]

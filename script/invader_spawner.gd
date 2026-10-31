@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var sfx_explosion: AudioStreamPlayer2D = $"sfx_explosion"
+@onready var sfx_wave: AudioStreamPlayer2D = $"sfx_wave"
+
 @export var invader_scene: PackedScene
 @export var shot_scene: PackedScene
 @export var horizontal = 50
@@ -17,6 +20,7 @@ func _ready() -> void:
 
 func spawn_invaders():
 	Global.waveCount +=1
+	sfx_wave.play()
 	hud.show_message("Wave " + str(Global.waveCount) + " Starting!")
 	direction = 1
 	invaderCount = 0
@@ -32,6 +36,7 @@ func spawn_invaders():
 
 func on_invader_killed()-> void:
 	invaderCount -= 1
+	sfx_explosion.play()
 	if invaderCount == 0: #calls when all invaders are killed
 		print("All invaders killed!")
 		if not is_inside_tree():
