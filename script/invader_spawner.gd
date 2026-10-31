@@ -4,8 +4,8 @@ extends Node2D
 @export var shot_scene: PackedScene
 @export var horizontal = 50
 @export var vertical = 48
-@export var rows = 4
-@export var columns = 11
+@export var rows = 2 #4
+@export var columns = 3 #11
 @export var vertical_speed = 48 
 @export var horizontal_speed = 5
 
@@ -31,17 +31,20 @@ func spawn_invaders():
 
 func on_invader_killed()-> void:
 	invaderCount -= 1
-	if invaderCount == 0:
+	if invaderCount == 0: #calls when all invaders are killed
 		print("All invaders killed!")
-		spawn_invaders()
+		if not is_inside_tree():
+			return
+			
+		var boss_spawner = get_tree().current_scene.get_node_or_null("boss_spawner")
+		if boss_spawner and boss_spawner.has_method("spawn_boss"):
+			boss_spawner.spawn_boss()
+
 	
-func _on_all_invaders_killed():
-	pass
 func _on_left_wall_area_entered(area: Area2D) -> void:
 	if direction < 0:
 		direction *= -1
 		position.y += vertical_speed
-		call_deferred("spawn_new_row")
 
 func _on_right_wall_area_entered(area: Area2D) -> void:
 	if direction > 0:
@@ -58,8 +61,10 @@ func _on_bottom_wall_area_entered(area: Area2D) -> void:
 
 
 func _on_shot_timer_timeout() -> void:
-
-	var i = get_children().filter(func(inv): return inv is Invader).pick_random()
+	var invaders = get_children().filter(func(inv): return inv is Invader)
+	if invaders.is_empty():
+		return
+	var i = get_children().filter(func(inv): return inv is Invader).pick_random()		
 	var shot = shot_scene.instantiate()
 	shot.global_position = i.global_position + Vector2(0,20)
 	get_tree().current_scene.add_child(shot)

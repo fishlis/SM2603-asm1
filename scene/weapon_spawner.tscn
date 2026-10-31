@@ -10,3 +10,5 @@ weapon_scene = ExtResource("2_8wa6l")
 shot_scene = ExtResource("3_cyaue")
 
 [node name="Shot Timer" type="Timer" parent="." unique_id=1691823108]
+
+[connection signal="timeout" from="Shot Timer" to="." method="_on_shot_timer_timeout"]

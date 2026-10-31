@@ -17,6 +17,7 @@ scale = Vector2(0.07280414, 0.06773651)
 texture = ExtResource("1_swcir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1417268633]
+visible = false
 position = Vector2(922, 244)
 shape = SubResource("CircleShape2D_o2wld")
 

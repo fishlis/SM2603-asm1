@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://uj2anjkbbsse"]
+
+[node name="HUD" type="Node2D" unique_id=1400906924]
+position = Vector2(562, 324)
+
+[node name="Message" type="Label" parent="." unique_id=956679395]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -30.0
+offset_right = 150.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 30)
+theme_override_font_sizes/font_size = 30
+text = "<TEMP MESSAGE>"
+horizontal_alignment = 1
+vertical_alignment = 1

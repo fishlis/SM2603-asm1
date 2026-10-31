@@ -25,13 +25,14 @@ func kill()->void:
 	invader_count+=1
 	if invader_count>=5:
 		print(invader_count)
-		spawn_weapon()
+		call_deferred("spawn_weapon")
+		#spawn_weapon()
 		invader_count=0
 
 
 
 func _on_shot_timer_timeout() -> void:
-
+	
 	var i = get_children().filter(func(inv): return inv is Invader).pick_random()
 	var shot = shot_scene.instantiate()
 	shot.global_position = i.global_position + Vector2(0,20)

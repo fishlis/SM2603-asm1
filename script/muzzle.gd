@@ -4,16 +4,18 @@ extends Node2D
 @onready var sfx_shoot: AudioStreamPlayer2D = $"../sfx_shoot"
 var can_shoot = true
 
-
-
+	
 func _input(event):
-	if Input.is_action_just_pressed("shoot") && can_shoot:
+	if Input.is_action_pressed("shoot") && can_shoot:
 		var laser = laser_scene.instantiate()
 		laser.global_position = get_parent().global_position + Vector2(0,-20)
 		get_tree().root.get_node("Main").add_child(laser)
 		can_shoot = false
-		laser.tree_exited.connect(on_laser_destroyed)
+		await get_tree().create_timer(0.5).timeout   # cooldown
+		can_shoot = true
+		#laser.tree_exited.connect(on_laser_destroyed)
 		sfx_shoot.play()
+	
 		
 func on_laser_destroyed():
 	can_shoot = true
