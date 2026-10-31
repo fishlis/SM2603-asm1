@@ -12,3 +12,6 @@ func _physics_process(delta):
 		$live2 .hide()
 	if LiveCounter.lives ==0:
 		get_tree().reload_current_scene()
+		#reset Global Variables
+		Global.score = 0
+		Global.waveCount = 0
