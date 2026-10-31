@@ -17,6 +17,8 @@ func _process(delta: float) -> void:
 	pass
 
 func spawn_boss() -> void:
+	hud.show_message("BOSS INCOMING!")
+	await get_tree().create_timer(3.0).timeout
 	print("Boss incoming!")
 	var boss = boss_scene.instantiate()   # or a dedicated boss_scene
 	position = start_position

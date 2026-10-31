@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bf67hnh3co1ed" path="res://scene/shield.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b2p6k1kjjoh4n" path="res://scene/weapon_spawner.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://b37v8g6fuj51r" path="res://scene/boss_spawner.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://coyfjijoudyjg" path="res://scene/hud.tscn" id="10_4c57u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wex63"]
 size = Vector2(30, 631.5)
@@ -65,9 +66,6 @@ rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_m4wtx")
 
-[node name="lives" parent="." unique_id=1722430613 instance=ExtResource("5_lquwl")]
-position = Vector2(977, 71)
-
 [node name="Shield" parent="." unique_id=123603018 instance=ExtResource("6_7mycd")]
 position = Vector2(200, 495)
 
@@ -83,6 +81,11 @@ position = Vector2(660, 498)
 position = Vector2(885, 500)
 
 [node name="WeaponSpawner" parent="." unique_id=1163157047 instance=ExtResource("7_272bh")]
+
+[node name="lives" parent="." unique_id=1722430613 instance=ExtResource("5_lquwl")]
+position = Vector2(999, 15)
+
+[node name="HUD" parent="." unique_id=477845463 instance=ExtResource("10_4c57u")]
 
 [connection signal="area_entered" from="LeftWall" to="InvaderSpawner" method="_on_left_wall_area_entered"]
 [connection signal="area_entered" from="LeftWall" to="boss_spawner" method="_on_left_wall_area_entered"]

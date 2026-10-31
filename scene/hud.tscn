@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://coyfjijoudyjg"]
+
+[ext_resource type="Script" uid="uid://ds7x3yc6so5a1" path="res://script/hud.gd" id="1_s3k51"]
+[ext_resource type="FontFile" uid="uid://d353skriwvjtw" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="2_o8u2p"]
+
+[node name="HUD" type="CanvasLayer" unique_id=477845463]
+script = ExtResource("1_s3k51")
+
+[node name="Message" type="Label" parent="." unique_id=756914477]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -76.0
+offset_right = 171.5
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.8392157, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8u2p")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Score" type="Label" parent="." unique_id=1633578712]
+offset_left = 32.0
+offset_top = 20.0
+offset_right = 173.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("2_o8u2p")
+theme_override_font_sizes/font_size = 40
+text = "Score:"
+
+[node name="MessageTimer" type="Timer" parent="." unique_id=1312135148]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

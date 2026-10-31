@@ -2,6 +2,7 @@ class_name Invader
 extends Area2D
 
 @export var invader_count=0
+@export var invaderPoint = 50 # points player earns for killing invader
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,6 +21,6 @@ func _on_area_entered(area: Area2D) -> void:
 		spawner.kill()
 	area.queue_free()
 	queue_free()
-	
+	Global.score += invaderPoint
 	
 	

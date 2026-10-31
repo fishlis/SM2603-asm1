@@ -15,8 +15,9 @@ var invaderCount = 0
 func _ready() -> void:
 	spawn_invaders()
 
-
 func spawn_invaders():
+	Global.waveCount +=1
+	hud.show_message("Wave " + str(Global.waveCount) + " Starting!")
 	direction = 1
 	invaderCount = 0
 	position = start_position
