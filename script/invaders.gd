@@ -19,7 +19,8 @@ func _on_area_entered(area: Area2D) -> void:
 	var spawner = get_tree().current_scene.get_node_or_null("WeaponSpawner")
 	if spawner and spawner.has_method("kill"):
 		spawner.kill()
-	area.queue_free()
+	if not area is PowerShot:
+		area.queue_free()
 	queue_free()
 	Global.score += invaderPoint
 	

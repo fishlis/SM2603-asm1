@@ -1,5 +1,6 @@
 extends Node
 
+var has_power_shot: bool = false
 var waveCount = 0
 var score = 0
 

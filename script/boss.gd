@@ -27,5 +27,6 @@ func _on_area_entered(area: Area2D) -> void:
 			boss_spawner.on_boss_defeated()
 		queue_free()
 		
-	area.queue_free()
+	if not area is PowerShot:
+		area.queue_free()
 		
