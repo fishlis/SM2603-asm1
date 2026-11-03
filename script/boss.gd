@@ -13,8 +13,13 @@ func _process(delta: float) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	print("hit")
-	HP -=1 
+	if area is PowerShot:
+		print("Power Hit!")
+		HP -=2
+	else:
+		print("hit")
+		HP -=1 
+	area.queue_free()
 	if HP == 0: 
 		print("Boss is Defeated")
 		Global.score += bossPoint
