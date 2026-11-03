@@ -21,6 +21,7 @@ func _on_area_entered(area: Area2D) -> void:
 		print("Weapon hit!")
 		if is_instance_valid(area):
 			area.queue_free()
+			
 		Global.has_power_shot = true
 		
 		var cannon = get_tree().current_scene.get_node_or_null("Cannon")
