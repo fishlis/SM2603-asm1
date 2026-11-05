@@ -23,7 +23,7 @@ func spawn_weapon():
 
 func kill()->void:
 	invader_count+=1
-	if invader_count>=1:
+	if invader_count>=5:
 		print(invader_count)
 		call_deferred("spawn_weapon")
 		#spawn_weapon()

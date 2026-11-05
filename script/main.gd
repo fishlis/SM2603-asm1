@@ -29,3 +29,14 @@ func _on_hud_start_game() -> void:
 	if invader_spawner and invader_spawner.has_method("spawn_invaders"):
 		invader_spawner.spawn_invaders()
 	
+
+
+func _on_left_wall_area_entered(area: Area2D) -> void:
+	if area.has_method("bounce"):
+		area.bounce()
+
+
+
+func _on_right_wall_area_entered(area: Area2D) -> void:
+	if area.has_method("bounce"):
+		area.bounce()

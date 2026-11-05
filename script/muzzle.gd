@@ -21,7 +21,9 @@ func _input(event):
 			Global.has_power_shot = false
 			
 		var laser = current_laser_scene.instantiate()
-		laser.global_position = get_parent().global_position + Vector2(0,-20)
+		laser.rotation = get_parent().rotation
+		laser.direction = Vector2(0,-1).rotated(get_parent().rotation)
+		laser.global_position = get_parent().global_position + Vector2(0,-20).rotated(get_parent().rotation)
 		get_tree().root.get_node("Main").add_child(laser)
 		can_shoot = false
 	

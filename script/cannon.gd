@@ -1,5 +1,6 @@
 extends Area2D
 @export var speed = 200
+@export var rotation_speed = 3.0
 
 
 var screen_size
@@ -23,6 +24,11 @@ func _process(delta: float) -> void:
 		direction = Vector2.ZERO
 	position.x+= delta * speed * direction.x
 	position = position.clamp(Vector2.ZERO, screen_size)
+	
+	if Input.is_action_pressed("left rotation"):
+		rotation-=rotation_speed*delta
+	if Input.is_action_pressed("right rotation"):
+		rotation +=rotation_speed*delta
 
 func show_message(text):
 	$Level_up_label.text = text

@@ -70,5 +70,8 @@ func _on_shot_timer_timeout() -> void:
 		return
 	var i = get_children().filter(func(inv): return inv is Invader).pick_random()		
 	var shot = shot_scene.instantiate()
+	
+	shot.direction = Vector2(0,1)
+	shot.rotation = PI
 	shot.global_position = i.global_position + Vector2(0,20)
 	get_tree().current_scene.add_child(shot)

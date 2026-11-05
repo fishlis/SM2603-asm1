@@ -9,7 +9,7 @@ size = Vector2(59.99997, 485.39026)
 [node name="Shot_PowerUp" type="Area2D" unique_id=890710097]
 position = Vector2(635, 346)
 collision_layer = 2
-collision_mask = 8
+collision_mask = 10
 script = ExtResource("1_r2s8t")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1748705709]
