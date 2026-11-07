@@ -1,7 +1,7 @@
 class_name Shot
 extends Area2D
 @export var speed = 100
-@export var direction = Vector2(0,-1)
+@export var direction = Vector2(0,1)
 
 
 

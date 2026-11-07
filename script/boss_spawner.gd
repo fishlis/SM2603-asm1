@@ -56,6 +56,7 @@ func _on_shot_timer_timeout() -> void:
 	var shot = shot_scene.instantiate()
 	get_tree().current_scene.add_child(shot)
 	shot.global_position = boss.global_position + Vector2(0, 20)
+	
 
 
 		
