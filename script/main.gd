@@ -21,6 +21,7 @@ func game_over():
 func _on_hud_start_game() -> void:
 	score=0
 	Global.score = 0
+	Global.waveCount = 0
 	$HUD.updateScore()
 	hud.get_node("StartBtn").hide()
 	$tutorial_button.hide()
