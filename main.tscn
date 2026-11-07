@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://b2p6k1kjjoh4n" path="res://scene/weapon_spawner.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://b37v8g6fuj51r" path="res://scene/boss_spawner.tscn" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://coyfjijoudyjg" path="res://scene/hud.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://b6luqyx0cf7sn" path="res://tutorial_button.tscn" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://bdyf5b1d2tyyn" path="res://tutorial.tscn" id="12_dg77c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wex63"]
 size = Vector2(30, 631.5)
@@ -90,6 +92,22 @@ position = Vector2(947, 18)
 [node name="StartPosition" type="Marker2D" parent="." unique_id=399520121]
 position = Vector2(588, 615)
 
+[node name="tutorial_button" parent="." unique_id=474575007 instance=ExtResource("11_efxa6")]
+offset_left = 430.0
+offset_top = 324.0
+offset_right = 470.0
+offset_bottom = 364.0
+
+[node name="TutorialLayer" type="CanvasLayer" parent="." unique_id=1970090734]
+layer = 10
+
+[node name="tutorial" parent="TutorialLayer" unique_id=412894505 instance=ExtResource("12_dg77c")]
+visible = false
+offset_left = -40.0
+offset_top = 4.0
+offset_right = 0.0
+offset_bottom = 44.0
+
 [connection signal="area_entered" from="LeftWall" to="." method="_on_left_wall_area_entered"]
 [connection signal="area_entered" from="LeftWall" to="InvaderSpawner" method="_on_left_wall_area_entered"]
 [connection signal="area_entered" from="LeftWall" to="boss_spawner" method="_on_left_wall_area_entered"]
@@ -99,3 +117,4 @@ position = Vector2(588, 615)
 [connection signal="area_entered" from="BottomWall" to="InvaderSpawner" method="_on_bottom_wall_area_entered"]
 [connection signal="area_entered" from="BottomWall" to="boss_spawner" method="_on_bottom_wall_area_entered"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="tutorial_requested" from="tutorial_button" to="." method="_on_tutorial_button_tutorial_requested"]

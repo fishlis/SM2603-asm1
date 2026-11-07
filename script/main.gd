@@ -23,6 +23,7 @@ func _on_hud_start_game() -> void:
 	Global.score = 0
 	$HUD.updateScore()
 	hud.get_node("StartBtn").hide()
+	$tutorial_button.hide()
 	get_tree().call_group("Invaders", "queue_free")
 	
 	var invader_spawner = get_node_or_null("InvaderSpawner")
@@ -40,3 +41,7 @@ func _on_left_wall_area_entered(area: Area2D) -> void:
 func _on_right_wall_area_entered(area: Area2D) -> void:
 	if area.has_method("bounce"):
 		area.bounce()
+
+
+func _on_tutorial_button_tutorial_requested() -> void:
+	$TutorialLayer/tutorial.show()

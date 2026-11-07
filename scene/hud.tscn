@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://d353skriwvjtw" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="2_o8u2p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c57u"]
-bg_color = Color(0.75569075, 0.59955174, 0, 1)
+bg_color = Color(0.75686276, 0.6, 0, 1)
 
 [node name="HUD" type="CanvasLayer" unique_id=477845463]
 script = ExtResource("1_s3k51")
