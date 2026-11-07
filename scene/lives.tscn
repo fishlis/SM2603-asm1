@@ -20,3 +20,13 @@ texture = ExtResource("2_r11ep")
 position = Vector2(93, 27)
 scale = Vector2(0.052734375, 0.052734375)
 texture = ExtResource("2_r11ep")
+
+[node name="live4" type="Sprite2D" parent="." unique_id=86187685]
+position = Vector2(126.00001, 27)
+scale = Vector2(0.052734375, 0.052734375)
+texture = ExtResource("2_r11ep")
+
+[node name="live5" type="Sprite2D" parent="." unique_id=1574591480]
+position = Vector2(160, 27)
+scale = Vector2(0.052734375, 0.052734375)
+texture = ExtResource("2_r11ep")

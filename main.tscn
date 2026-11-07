@@ -83,7 +83,7 @@ position = Vector2(885, 500)
 [node name="WeaponSpawner" parent="." unique_id=1163157047 instance=ExtResource("7_272bh")]
 
 [node name="lives" parent="." unique_id=1722430613 instance=ExtResource("5_lquwl")]
-position = Vector2(999, 15)
+position = Vector2(947, 18)
 
 [node name="HUD" parent="." unique_id=477845463 instance=ExtResource("10_4c57u")]
 

@@ -1,6 +1,6 @@
 extends Area2D
 @export var speed = 200
-@export var rotation_speed = 3.0
+@export var rotation_speed = 2.0
 
 
 var screen_size

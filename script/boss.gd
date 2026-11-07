@@ -21,7 +21,7 @@ func _on_area_entered(area: Area2D) -> void:
 		
 	else:
 		print("hit")
-		HP -=1 
+		HP -=2 
 		
 	healthbar.health = HP
 	area.queue_free()
