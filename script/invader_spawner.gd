@@ -7,8 +7,8 @@ extends Node2D
 @export var shot_scene: PackedScene
 @export var horizontal = 50
 @export var vertical = 48
-@export var rows = 2 #4
-@export var columns = 3 #11
+@export var rows = 4 #4
+@export var columns = 11 #11
 @export var vertical_speed = 48 
 @export var horizontal_speed = 5
 

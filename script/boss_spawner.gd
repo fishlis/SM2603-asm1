@@ -1,7 +1,7 @@
 extends Node2D
 @export var shot_scene: PackedScene
 @export var boss_scene: PackedScene
-@export var vertical_speed = 48 
+@export var vertical_speed =  48 
 @export var horizontal_speed = 5
 @export var dual_offset := 28.0
 @export var muzzle_down := 48.0
@@ -9,8 +9,8 @@ extends Node2D
 @export var sway_amount := 0.85
 @export var fan_count := 3
 @export var fan_spread := 0.9
-@export var dual_fire_interval := 0.4
-@export var fan_fire_interval := 0.4
+@export var dual_fire_interval := 1.0
+@export var fan_fire_interval := 2.0
 var direction = 1
 var sway_time := 0.0
 
@@ -25,6 +25,8 @@ func _process(delta: float) -> void:
 	sway_time += delta
 
 func spawn_boss() -> void:
+	dual_fire_interval = 2.0 / Global.waveCount
+	fan_fire_interval = 2.0 / Global.waveCount
 	hud.show_message("BOSS INCOMING!")
 	await get_tree().create_timer(3.0).timeout
 	print("Boss incoming!")

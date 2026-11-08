@@ -21,13 +21,13 @@ func _on_area_entered(area: Area2D) -> void:
 	HP -=1 
 	sfx_explosion.play()
 	if HP == 0: 
-	if area is PowerShot:
-		print("Power Hit!")
-		HP -=5
-		
-	else:
-		print("hit")
-		HP -=2 
+		if area is PowerShot:
+			print("Power Hit!")
+			HP -=5
+			
+		else:
+			print("hit")
+			HP -=2 
 		
 	healthbar.health = HP
 	area.queue_free()
@@ -38,6 +38,12 @@ func _on_area_entered(area: Area2D) -> void:
 		var invader_spawner = get_tree().current_scene.get_node_or_null("InvaderSpawner")
 		if invader_spawner and invader_spawner.has_method("spawn_invaders"):
 			invader_spawner.call_deferred("spawn_invaders")
+		
+		var main = get_tree().current_scene	
+		for child in main.get_children():
+			if child is Shot:
+				child.queue_free()
+			
 		# stop the boss spawner's timers 
 		var boss_spawner = get_tree().current_scene.get_node_or_null("BossSpawner")
 		if boss_spawner and boss_spawner.has_method("on_boss_defeated"):

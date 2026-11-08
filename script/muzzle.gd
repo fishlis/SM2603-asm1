@@ -12,9 +12,6 @@ func _process(delta: float)-> void:
 		press_time = 0.0
 func _input(event):
 	if Input.is_action_pressed("shoot") && can_shoot:
-		var laser = laser_scene.instantiate()
-		sfx_shoot.play() #laser sfx
-		laser.global_position = get_parent().global_position + Vector2(0,-20)
 		var current_laser_scene = laser_scene
 		var used_power_shot = false
 		
@@ -32,6 +29,7 @@ func _input(event):
 	
 		await get_tree().create_timer(0.5).timeout   # cooldown
 		can_shoot = true
+		sfx_shoot.play() #laser s fx
 		#laser.tree_exited.connect(on_laser_destroyed)
 		
 		
