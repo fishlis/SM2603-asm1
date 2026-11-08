@@ -17,7 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.name.contains("shot") or area.name.contains("Shot") or area.name.contains("Laser"):
+	if area.name.contains("Laser"):
 		print("Weapon hit!")
 		if is_instance_valid(area):
 			area.queue_free()
@@ -26,6 +26,6 @@ func _on_area_entered(area: Area2D) -> void:
 		
 		var cannon = get_tree().current_scene.get_node_or_null("Cannon")
 		if cannon and cannon.has_method("show_message"):
-			cannon.show_message("Hold to Shoot!")
+			cannon.show_message("Press again and Shoot!")
 		queue_free()
 		
