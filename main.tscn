@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://coyfjijoudyjg" path="res://scene/hud.tscn" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://b6luqyx0cf7sn" path="res://tutorial_button.tscn" id="11_efxa6"]
 [ext_resource type="PackedScene" uid="uid://bdyf5b1d2tyyn" path="res://tutorial.tscn" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://c8e2fnop4xs1s" path="res://scene/bgm.tscn" id="13_ycdy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wex63"]
 size = Vector2(30, 631.5)
@@ -105,6 +106,9 @@ offset_left = -40.0
 offset_top = 4.0
 offset_right = 0.0
 offset_bottom = 44.0
+
+[node name="BGM" parent="." unique_id=1515154532 instance=ExtResource("13_ycdy4")]
+position = Vector2(-40, 4)
 
 [connection signal="area_entered" from="LeftWall" to="." method="_on_left_wall_area_entered"]
 [connection signal="area_entered" from="LeftWall" to="InvaderSpawner" method="_on_left_wall_area_entered"]

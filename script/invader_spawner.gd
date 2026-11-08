@@ -13,6 +13,7 @@ extends Node2D
 @export var horizontal_speed = 5
 
 @onready var start_button: Button = hud.get_node_or_null("StartButton")
+@onready var bgm: Node2D = get_tree().current_scene.get_node_or_null("BGM")
 
 var start_position = Vector2(179.0, 75)
 var direction = 1
@@ -24,6 +25,7 @@ func _ready() -> void:
 func spawn_invaders():
 	Global.waveCount +=1
 	sfx_wave.play()
+	fade_bgm_for_wave()
 	hud.show_message("Wave " + str(Global.waveCount) + " Starting!")
 	direction = 1
 	invaderCount = 0
@@ -80,3 +82,10 @@ func _on_shot_timer_timeout() -> void:
 	shot.rotation = PI
 	shot.global_position = i.global_position + Vector2(0,20)
 	get_tree().current_scene.add_child(shot)
+
+func fade_bgm_for_wave()-> void:
+	var original: float = bgm.get_node("Audio").volume_db
+	bgm.changeVolume(-40.0)  # mute
+	await get_tree().create_timer(sfx_wave.stream.get_length()).timeout
+	if is_instance_valid(bgm):
+		bgm.changeVolume(original)  # restore

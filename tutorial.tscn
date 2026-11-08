@@ -23,7 +23,6 @@ anchor_right = 25.525002
 anchor_bottom = 14.075001
 offset_left = -1.5258789e-05
 offset_right = -6.1035156e-05
-mouse_filter = 0
 color = Color(0, 0, 0, 0.6431373)
 
 [node name="Label" type="Label" parent="." unique_id=533599210]
