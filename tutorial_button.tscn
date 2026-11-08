@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b6luqyx0cf7sn"]
+
+[ext_resource type="Script" uid="uid://bhlgbgauo13ay" path="res://tutorial_button.gd" id="1_7ts5g"]
+[ext_resource type="FontFile" uid="uid://d353skriwvjtw" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="1_e2r0n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s42s1"]
+bg_color = Color(0.75686276, 0.6, 0, 1)
+
+[node name="Control" type="Button" unique_id=331596056]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7ts5g")
+
+[node name="tutorial_button" type="Button" parent="." unique_id=2009328618]
+custom_minimum_size = Vector2(221, 90)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 22.0
+offset_right = 38.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("1_e2r0n")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_s42s1")
+text = "Tutorial"

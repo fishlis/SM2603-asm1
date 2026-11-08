@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://beq1rjtbwaa1q"]
+
+[ext_resource type="FontFile" uid="uid://d353skriwvjtw" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="1_r04n3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s42s1"]
+bg_color = Color(0.75686276, 0.6, 0, 1)
+
+[node name="Button" type="Button" unique_id=2009328618]
+custom_minimum_size = Vector2(221, 90)
+offset_left = 30.0
+offset_top = 22.0
+offset_right = 38.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("1_r04n3")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_s42s1")
+text = "Tutorial"

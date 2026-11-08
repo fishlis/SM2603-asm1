@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dgybrp0aoqgeo"]
+
+[ext_resource type="Script" uid="uid://bnyn4bd5bfyya" path="res://shot_power_up.gd" id="1_r2s8t"]
+[ext_resource type="Texture2D" uid="uid://dmhrcl7vaoq8s" path="res://assets/PowerShot.png" id="2_7f7bt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wex63"]
+size = Vector2(59.99997, 485.39026)
+
+[node name="Shot_PowerUp" type="Area2D" unique_id=890710097]
+position = Vector2(635, 346)
+collision_layer = 2
+collision_mask = 10
+script = ExtResource("1_r2s8t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1748705709]
+position = Vector2(-3.8530273, -6.60968)
+rotation = 3.1415927
+scale = Vector2(0.9320686, 2.1463418)
+texture = ExtResource("2_7f7bt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=900175191]
+position = Vector2(-2, -3.3048706)
+shape = SubResource("RectangleShape2D_wex63")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=88833756]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

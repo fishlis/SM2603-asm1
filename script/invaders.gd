@@ -20,6 +20,8 @@ func _on_area_entered(area: Area2D) -> void:
 		spawner.kill()
 	Global.score += invaderPoint
 	area.queue_free()
+	if not area is PowerShot:
+		area.queue_free()
 	queue_free()
 
 	

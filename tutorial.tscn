@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://bdyf5b1d2tyyn"]
+
+[ext_resource type="Script" uid="uid://n6fn5k88gye0" path="res://tutorial.gd" id="1_hu44a"]
+[ext_resource type="FontFile" uid="uid://d353skriwvjtw" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="1_rwowx"]
+[ext_resource type="Texture2D" uid="uid://bch0e1yg64axi" path="res://assets/cannon.png" id="2_hu44a"]
+[ext_resource type="Texture2D" uid="uid://deoyxn8t4lqtm" path="res://assets/white-arrow-png-41951.png" id="3_0cr88"]
+[ext_resource type="Texture2D" uid="uid://210ya06revp1" path="res://assets/laser.png" id="4_4t6hg"]
+[ext_resource type="Texture2D" uid="uid://jwlqb86gb0q4" path="res://assets/white-arrow-png-41946.png" id="5_7vrqn"]
+
+[node name="tutorial" type="Control" unique_id=412894505]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hu44a")
+
+[node name="background" type="ColorRect" parent="." unique_id=87021029]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.2500005
+anchor_top = 2.25
+anchor_right = 25.525002
+anchor_bottom = 14.075001
+offset_left = -1.5258789e-05
+offset_right = -6.1035156e-05
+mouse_filter = 0
+color = Color(0, 0, 0, 0.6431373)
+
+[node name="Label" type="Label" parent="." unique_id=533599210]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 197.0
+offset_right = 549.0
+offset_bottom = 215.0
+theme_override_fonts/font = ExtResource("1_rwowx")
+theme_override_font_sizes/font_size = 20
+text = "Press \"A\" to rotate left"
+
+[node name="Label2" type="Label" parent="." unique_id=861009457]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 116.0
+offset_right = 681.0
+offset_bottom = 143.0
+theme_override_fonts/font = ExtResource("1_rwowx")
+theme_override_font_sizes/font_size = 30
+text = "Tutorial"
+
+[node name="Label3" type="Label" parent="." unique_id=216178401]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 385.0
+offset_right = 553.0
+offset_bottom = 403.0
+theme_override_fonts/font = ExtResource("1_rwowx")
+theme_override_font_sizes/font_size = 20
+text = "Press \"D\" to rotate right"
+
+[node name="Cannon" type="Sprite2D" parent="." unique_id=1023230877]
+position = Vector2(394.73428, 306.11652)
+rotation = -0.43633232
+scale = Vector2(1.96875, 1.96875)
+texture = ExtResource("2_hu44a")
+
+[node name="Cannon2" type="Sprite2D" parent="." unique_id=1707094388]
+position = Vector2(395, 493)
+rotation = 0.43633232
+scale = Vector2(1.96875, 1.96875)
+texture = ExtResource("2_hu44a")
+
+[node name="WhiteArrowPng41951" type="Sprite2D" parent="." unique_id=493784548]
+position = Vector2(416, 443)
+rotation = 0.44331363
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0cr88")
+
+[node name="WhiteArrowPng41952" type="Sprite2D" parent="." unique_id=1151762177]
+position = Vector2(373.7343, 256.11652)
+rotation = -0.61784655
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0cr88")
+flip_h = true
+
+[node name="Label4" type="Label" parent="." unique_id=831855627]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 198.0
+offset_right = 966.0
+offset_bottom = 216.0
+theme_override_fonts/font = ExtResource("1_rwowx")
+theme_override_font_sizes/font_size = 20
+text = "Press space bar to shoot lasers"
+
+[node name="Cannon3" type="Sprite2D" parent="." unique_id=699246287]
+position = Vector2(786.5, 319.00003)
+scale = Vector2(1.96875, 1.96875)
+texture = ExtResource("2_hu44a")
+
+[node name="Laser" type="Sprite2D" parent="." unique_id=1786713144]
+position = Vector2(786.5, 253)
+texture = ExtResource("4_4t6hg")
+
+[node name="Label5" type="Label" parent="." unique_id=1274827323]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 386.0
+offset_right = 966.0
+offset_bottom = 404.0
+theme_override_fonts/font = ExtResource("1_rwowx")
+theme_override_font_sizes/font_size = 18
+text = "Press left and right arrows to move"
+
+[node name="Cannon4" type="Sprite2D" parent="." unique_id=2051040915]
+position = Vector2(786.00006, 487)
+scale = Vector2(1.96875, 1.96875)
+texture = ExtResource("2_hu44a")
+
+[node name="WhiteArrowPng41946" type="Sprite2D" parent="." unique_id=1952386980]
+position = Vector2(857, 503.67526)
+scale = Vector2(0.067010306, 0.045660302)
+texture = ExtResource("5_7vrqn")
+
+[node name="WhiteArrowPng41947" type="Sprite2D" parent="." unique_id=737369859]
+position = Vector2(714.99994, 504.00003)
+scale = Vector2(0.067010306, 0.045660302)
+texture = ExtResource("5_7vrqn")
+flip_h = true
+
+[node name="Button" type="Button" parent="." unique_id=1134244820]
+layout_mode = 0
+offset_left = 967.0
+offset_top = 100.0
+offset_right = 1005.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("1_rwowx")
+theme_override_font_sizes/font_size = 40
+text = "x"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -12,11 +12,14 @@ extends Node2D
 @export var vertical_speed = 48 
 @export var horizontal_speed = 5
 
+@onready var start_button: Button = hud.get_node_or_null("StartButton")
+
 var start_position = Vector2(179.0, 75)
 var direction = 1
 var invaderCount = 0
+
 func _ready() -> void:
-	spawn_invaders()
+	pass
 
 func spawn_invaders():
 	Global.waveCount +=1
@@ -72,5 +75,8 @@ func _on_shot_timer_timeout() -> void:
 		return
 	var i = get_children().filter(func(inv): return inv is Invader).pick_random()		
 	var shot = shot_scene.instantiate()
+	
+	shot.direction = Vector2(0,1)
+	shot.rotation = PI
 	shot.global_position = i.global_position + Vector2(0,20)
 	get_tree().current_scene.add_child(shot)

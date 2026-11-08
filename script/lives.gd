@@ -3,9 +3,13 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	LiveCounter.lives=3
+	LiveCounter.lives=5
 	
 func _physics_process(delta):
+	if LiveCounter.lives ==4:
+		$live5.hide()
+	if LiveCounter.lives ==3:
+		$live4.hide()
 	if LiveCounter.lives ==2:
 		$live3.hide()
 	if LiveCounter.lives ==1:

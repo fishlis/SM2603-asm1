@@ -17,7 +17,7 @@ func _on_area_entered(area: Area2D) -> void:
 	DMG_taken += 1
 	print("Shield Damaged! HP: ", DMG_taken)
 	spriteFrame += 1
-	if spriteFrame < 8:
+	if  spriteFrame < 8:
 		$Sprite2D.set_frame(spriteFrame)
 	else: 
 		$Sprite2D.queue_free()
